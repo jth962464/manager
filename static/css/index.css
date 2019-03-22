@@ -1,0 +1,922 @@
+html,body{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: auto;
+}
+/*登录页面*/
+.logoBox{
+	width: 4.34rem;
+	height: 2.57rem;
+	background: url(../img/logo.png) no-repeat;
+	background-size: cover;
+	margin: 0 auto;
+	margin-top: 1.3rem;
+}
+.loginBox{
+	width: 4.67rem;
+	height: 4.57rem;
+	margin: 0 auto;
+	margin-top: 2.5rem;
+}
+.loginInput{
+	width: 100%;
+	height: 0.77rem;
+	border-bottom: 0.02rem solid #fff;
+}
+.loginInput .boxIcon{
+	width: 0.23rem;
+	height: 0.23rem;
+	float: left;
+	margin-top: 0.28rem;
+}
+.loginInput .boxTitle{
+	width: 0.97rem;
+	height: 100%;
+	line-height: 0.77rem;
+	text-align: center;
+	float: left;
+	margin-left: 0.15rem;
+	font-size: 0.24rem;
+	color: #fff;
+}
+.loginInput .boxInput{
+	width: 3.2rem !important;
+	height: 100% !important;
+	line-height: 0.77rem !important;
+	text-align: left;
+	float: left;
+	border: none !important;
+	outline: none !important;
+	background: none !important;
+	font-size: 0.24rem !important;
+	color: #fff !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+.loginBtn{
+	width: 4.66rem;
+	height: 0.7rem;
+	line-height: 0.7rem;
+	text-align: center;
+	background: #4385ff;
+	color: #fff;
+	font-size: 0.26rem;
+	margin: 0 auto;
+	margin-top: 1.5rem;
+	border-radius: 0.5rem;
+}
+.tips{
+	font-size: 0.22rem;
+	color: #fff;
+	width: 100%;
+	text-align: center;
+	margin-top: 0.3rem;
+}
+/*忘记密码*/
+.pwdBox{
+	width: 4.71rem;
+	height: 6.3rem;
+	margin: 0 auto;
+	margin-top: 1.2rem;
+}
+.pwdInput{
+	width: 100%;
+	height: 0.77rem;
+	border-bottom: 0.02rem solid #fff;
+}
+.pwdInput .boxIcon{
+	width: 0.23rem;
+	height: 0.23rem;
+	float: left;
+	margin-top: 0.28rem;
+}
+.pwdInput .boxTitle{
+	width: 1.2rem;
+	height: 100%;
+	line-height: 0.77rem;
+	text-align: left;
+	float: left;
+	margin-left: 0.15rem;
+	font-size: 0.24rem;
+	color: #fff;
+}
+.pwdInput .boxInput{
+	width: 3rem !important;
+	height: 100% !important;
+	line-height: 0.77rem !important;
+	text-align: left;
+	float: left;
+	border: none !important;
+	outline: none !important;
+	background: none !important;
+	font-size: 0.24rem !important;
+	color: #fff !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+.pwdInput .yamBtn{
+	width: 1.48rem;
+	height: 0.43rem;
+	line-height: 0.43rem;
+	text-align: center;
+	font-size: 0.22rem;
+	color: #fff;
+	float: right;
+	background: #4385ff;
+	border-radius: 0.5rem;
+	margin-top: 0.15rem;
+}
+.xieyi{
+	width: 100%;
+	height: 0.4rem;
+	margin-top: 0.3rem;
+	overflow: hidden;
+	position: relative;
+}
+.xieyi>img{
+	float: left;
+	width: 0.33rem;
+	height: 0.33rem;
+	margin-top: 0.05rem;
+	position: absolute;
+	left: 0;
+}
+.xieyi>input{
+	float: left;
+	position: absolute;
+	left: 0;
+	width: 0.33rem;
+	height: 0.33rem;
+	z-index: 99;
+	opacity: 0;
+}
+.xieyi>p{
+	float: left;
+	font-size: 0.22rem;
+	color: #fff;
+	text-align: center;
+	height: 100%;
+	line-height: 0.4rem;
+	position: absolute;
+	left: 0.5rem;
+}
+.mask{
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: none;
+}
+.xieyiBox{
+	width: 6.11rem;
+	height: 9.06rem;
+	background: #fff;
+	border-radius: 0.5rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	display: none;
+}
+.close{
+	width: 0.34rem;
+	height: 0.34rem;
+	background: url(../img/back.png) no-repeat;
+	background-size: cover;
+	position: absolute;
+	top: 0.23rem;
+	right: 0.23rem;
+}
+.maskTitle{
+	width: 100%;
+	height: 0.4rem;
+	line-height: 0.4rem;
+	text-align: center;
+	font-size: 0.28rem;
+	color: #333333;
+	margin-top: 0.5rem;
+}
+.maskInfo{
+	width: 5.15rem;
+	height: 7.5rem;
+	margin: 0 auto;
+	margin-top: 0.24rem;
+	overflow: hidden;
+	font-size: 0.26rem;
+	color: #333333;
+	text-indent: 2em;
+    overflow-y: scroll;
+}
+.maskInfo p{
+	font-size: 0.26rem;
+	color: #333333;
+	text-indent: 2em;
+}
+/*首页*/
+.indexBox{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: block;
+	overflow: scroll;
+}
+.MangerBox{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: none;
+}
+.allBox{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: none;
+}
+.indexLogo{
+	width: 5.39rem;
+	height: 0.78rem;
+	background: url(../img/LOGO1.png) no-repeat;
+	background-size: cover;
+	margin-top: 1rem;
+	margin-left: 0.5rem;
+}
+.infoBox{
+	width: 6.25rem;
+	height: 0.83rem;
+	margin: 0 auto;
+	border-bottom: 0.02rem solid #fff;
+	margin-top: 0.2rem;
+}
+.infoBox>.name{
+	float: left;
+	/*width: 40%;*/
+	max-width: 35%;
+	height: 100%;
+	line-height: 0.83rem;
+	font-size: 0.28rem;
+	color: #fff;
+	text-align: left;
+	overflow: hidden; 
+	text-overflow: ellipsis; 
+	white-space: nowrap;
+}
+.infoBox>.level{
+	float: left;
+	width: 30%;
+	height: 100%;
+	line-height: 0.83rem;
+	font-size: 0.28rem;
+	color: #fff;
+	margin-left: 0.2rem;
+	text-align: left;
+	overflow: hidden; 
+	text-overflow: ellipsis; 
+	white-space: nowrap;
+}
+.infoBox>.upBtn{
+	float: right;
+	width: 1.63rem;
+	height: 0.56rem;
+	background: url(../img/sqsj.png) no-repeat;
+	background-size: cover;
+    margin-top: 0.1rem;
+    margin-right: 0rem;
+}
+.divTitle{
+	font-size: 0.28rem;
+	color: #fff;
+	font-weight: bold;
+	margin-top: 0.4rem;
+	margin-left: 0.46rem;
+}
+.indexUl{
+	width: 6.53rem;
+	height: 7.31rem;
+	margin: 0 auto;
+	background: #fff;
+	border-radius: 0.2rem;
+	margin-top: 0.3rem;
+	padding: 0.65rem 0.55rem;
+}
+.indexUl ul{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.indexUl ul li{
+	width: 2.39rem;
+	height: 1.57rem;
+	float: left;
+	margin-left: 0.3rem;
+	margin-bottom: 0.5rem;
+}
+.indexUl ul li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.indexUl ul li a img{
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+.tcBtn{
+	width: 6.35rem;
+	height: 0.76rem;
+	margin: 0 auto;
+	border-radius: 0.5rem;
+	background: #4385ff;
+	color: #fff;
+	font-size: 0.34rem;
+	line-height: 0.76rem;
+	text-align: center;
+	margin-top: 0.5rem;
+}
+.allUl{
+	width: 6.53rem;
+	height: 7.31rem;
+	margin: 0 auto;
+	background: #fff;
+	border-radius: 0.2rem;
+	margin-top: 0.3rem;
+	padding: 0.5rem 0.2rem;
+}
+.allUl ul{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.allUl ul li{
+	width: 2.01rem;
+	height: 1.94rem;
+	float: left;
+	margin-bottom: 0.2rem;
+}
+.allUl ul li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.allUl ul li a img{
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+.jhmBox{
+	width: 6.12rem;
+	height: 3.09rem;
+	background: #fff;
+	border-radius: 0.5rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	display: none;
+}
+.jhmBox1{
+	width: 6.12rem;
+	height: 3.09rem;
+	background: #fff;
+	border-radius: 0.5rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	display: none;
+}
+.jhmInput{
+	display: block;
+	width: 4.72rem !important;
+	height: 0.74rem !important;
+	margin: 0 auto !important;
+	border-radius: 0.5rem !important;
+	background: #f5f5f5 !important;
+	line-height: 0.74rem !important;
+	border: none !important;
+	outline: none !important;
+	margin-top: 0.3rem !important;
+}
+.sureBtn{
+	width: 1.49rem;
+	height: 0.6rem;
+	line-height: 0.6rem;
+	text-align: center;
+	font-size: 0.28rem;
+	color: #fff;
+	background: #4385ff;
+	border-radius: 0.5rem;
+	margin: 0 auto;
+	margin-top: 0.3rem;
+}
+.hyshBox{
+	width: 6.11rem;
+	height: 9.06rem;
+	background: #fff;
+	border-radius: 0.5rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	display: none;
+}
+.shList{
+	width: 5.6rem;
+	height: 7.5rem;
+	margin: 0 auto;
+	margin-top: 0.24rem;
+	overflow: hidden;
+}
+.shList li{
+	width: 100%;
+	height: 0.81rem;
+}
+.shList li>p{
+	width: 40%;
+	float: left;
+	height: 100%;
+	line-height: 0.81rem;
+	text-align: center;
+	font-size: 0.22rem;
+	color: #333;
+}
+.shList li>a:nth-of-type(2){
+	display: block;
+	float: right;
+	width: 1.31rem;
+	height: 0.53rem;
+	line-height: 0.53rem;
+	text-align: center;
+	font-size: 0.22rem;
+	color: #fff;
+	background: #4385ff;
+	border-radius: 0.5rem;
+	margin-top: 0.15rem;
+    margin-right: 0.2rem;
+}
+.shList li>a:nth-of-type(1){
+	display: block;
+	float: right;
+	width: 1.31rem;
+	height: 0.53rem;
+	line-height: 0.53rem;
+	text-align: center;
+	font-size: 0.22rem;
+	color: #fff;
+	background: #a0a0a0;
+	border-radius: 0.5rem;
+	margin-top: 0.15rem;
+    margin-right: 0.2rem;
+}
+.header{
+	width: 100%;
+	height: 0.88rem;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	background: #4385ff;
+}
+.backPage{
+	width: 0.15rem;
+	height: 0.27rem;
+	background: url(../img/backPage.png) no-repeat;
+	background-size: cover;
+	position: absolute;
+    top: 0.3rem;
+    left: 0.3rem;
+}
+.page_title{
+	width: 100%;
+	height: 100%;
+	line-height: 0.88rem;
+	text-align: center;
+	font-size: 0.3rem;
+	color: #fff;
+}
+.inputBox{
+	width: 100%;
+	height: auto;
+	background: #fff;
+	padding: 0 0.3rem;
+}
+.inputBox_form{
+	width: 100%;
+	height: 1.1rem;
+	border-bottom: 0.01rem solid #e8e8e8;
+}
+.inputBox_form>p{
+	width: 28%;
+	height: 100%;
+	line-height: 1.1rem;
+	text-align: left;
+	font-size: 0.28rem;
+	color: #000;
+	float: left;
+}
+.inputBox_form>input{
+	width: 70% !important;
+	height: 100% !important;
+	line-height: 1.1rem !important;
+	text-align: left;
+	float: left;
+	outline: none;
+	border: none !important;
+	background: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	color: #999;
+}
+.login_btn{
+	width: 6.57rem;
+	height: 0.92rem;
+	background: #4385ff;
+	margin: 0 auto;
+	line-height: 0.92rem;
+	text-align: center;
+	font-size: 0.3rem;
+	color: #fff;
+	margin-top: 0.68rem;
+	border-radius: 0.5rem;
+}
+.myInfoBox{
+	width: 7.02rem;
+	height: 7.13rem;
+	background: #fff;
+	margin: 0 auto;
+	border-radius: 0.2rem;
+	margin-top: 0.5rem;
+	padding: 0.2rem;
+}
+.myInfoBox>p{
+	width: 100%;
+	height: 0.9rem;
+	line-height: 0.9rem;
+	text-align: left;
+	font-size: 0.26rem;
+	color: #333333;
+	overflow: hidden;
+	text-overflow: ellipsis; 
+	white-space: nowrap;
+}
+.myInfoBox div{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+.myInfoBox div>p{
+	float: left;
+	height: 0.9rem;
+	line-height: 0.9rem;
+	text-align: left;
+	font-size: 0.26rem;
+	color: #333333;
+	overflow: hidden;
+	text-overflow: ellipsis; 
+	white-space: nowrap;
+}
+.myInfoBox div>img{
+	float: left;
+	width: 2rem;
+	height: 2rem;
+	border: none;
+	margin-left: 0.2rem;
+}
+.newMemberList{
+	width: 7.02rem;
+	height: auto;
+	overflow: hidden;
+	background: #fff;
+	border-radius: 0.2rem;
+	margin: 0 auto;
+	margin-top: 0.2rem;
+	padding-bottom: 0.8rem;
+}
+.topUl{
+	width: 100%;
+	height: 0.64rem;
+	border-radius: 0.2rem 0.2rem 0 0;
+	border-bottom: 0.01rem solid #dcdcdc;
+}
+.topUl li{
+	width: 50%;
+	height: 100%;
+	float: left;
+	line-height: 0.64rem;
+	text-align: center;
+	font-size: 0.24rem;
+	color: #333333;
+}
+.tobUl{
+	width: 100%;
+	height: 0.47rem;
+	border-bottom: 0.01rem solid #dcdcdc;
+}
+.tobUl li{
+	width: 50%;
+	height: 100%;
+	float: left;
+	line-height: 0.47rem;
+	text-align: center;
+	font-size: 0.24rem;
+	color: #333333;
+}
+.listUl{
+	width: 100%;
+	height: 0.64rem;
+	border-radius: 0.2rem 0.2rem 0 0;
+	border-bottom: 0.01rem solid #dcdcdc;
+}
+.listUl li{
+	width: 14%;
+	height: 100%;
+	float: left;
+	line-height: 0.64rem;
+	text-align: center;
+	font-size: 0.24rem;
+	color: #333333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.listInfoUl{
+	width: 100%;
+	height: 0.47rem;
+	border-bottom: 0.01rem solid #dcdcdc;
+}
+.listInfoUl li{
+	width: 14%;
+	height: 100%;
+	float: left;
+	line-height: 0.47rem;
+	text-align: center;
+	font-size: 0.24rem;
+	color: #333333;
+	overflow: hidden; 
+	text-overflow: ellipsis; 
+	white-space: nowrap;
+}
+.listInfoUl li>div{
+	width: 1.02rem;
+	height: 0.4rem;
+	line-height: 0.4rem;
+	text-align: center;
+	background: #4385ff;
+	font-size: 0.2rem;
+	color: #fff;
+	margin-top: 0.03rem;
+    margin-left: 0.1rem;
+    border-radius: 0.2rem;
+}
+.listInfoUl .look_info{
+	width: 1.02rem;
+	height: 0.4rem;
+	line-height: 0.4rem;
+	text-align: center;
+	background: #02da78;
+	font-size: 0.2rem;
+	color: #fff;
+	margin-top: 0.03rem;
+    margin-left: 0.1rem;
+    border-radius: 0.2rem;
+    display:block;
+}
+.shMember{
+	width: 100%;
+	height: 7.5rem;
+	margin: 0 auto;
+	margin-top: 0.24rem;
+	overflow: hidden;
+}
+.shMember li{
+	width: 100%;
+	height: 0.81rem;
+	border-bottom: 0.01rem solid #d2d2d2;
+}
+.shMember li>p{
+	width: 40%;
+	float: left;
+	height: 100%;
+	line-height: 0.81rem;
+	text-align: center;
+	font-size: 0.22rem;
+	color: #333;
+}
+.shMember li>a:nth-of-type(2){
+	display: block;
+	float: right;
+	width: 1.31rem;
+	height: 0.53rem;
+	line-height: 0.53rem;
+	text-align: center;
+	font-size: 0.22rem;
+	color: #fff;
+	background: #4385ff;
+	border-radius: 0.5rem;
+	margin-top: 0.15rem;
+    margin-right: 0.2rem;
+}
+.shMember li>a:nth-of-type(1){
+	display: block;
+	float: right;
+	width: 1.31rem;
+	height: 0.53rem;
+	line-height: 0.53rem;
+	text-align: center;
+	font-size: 0.22rem;
+	color: #fff;
+	background: #a0a0a0;
+	border-radius: 0.5rem;
+	margin-top: 0.15rem;
+    margin-right: 0.2rem;
+}
+.jhmUl{
+	width: 100%;
+	height: 0.64rem;
+	border-radius: 0.2rem 0.2rem 0 0;
+	border-bottom: 0.01rem solid #dcdcdc;
+}
+.jhmUl li{
+	width: 25%;
+	height: 100%;
+	float: left;
+	line-height: 0.64rem;
+	text-align: center;
+	font-size: 0.24rem;
+	color: #333333;
+}
+.jhmInfoUl{
+	width: 100%;
+	height: 0.47rem;
+	border-bottom: 0.01rem solid #dcdcdc;
+}
+.jhmInfoUl li{
+	width: 25%;
+	height: 100%;
+	float: left;
+	line-height: 0.47rem;
+	text-align: center;
+	font-size: 0.24rem;
+	color: #333333;
+	overflow: hidden; 
+	text-overflow: ellipsis; 
+	white-space: nowrap;
+
+}
+.jhmBegin{
+	width: 7.02rem;
+	height: 2.5rem;
+	background: #fff;
+	border-radius: 0.2rem;
+	margin: 0 auto;
+	margin-top: 0.2rem;
+	overflow: hidden;
+}
+.jhmBegin>p{
+	width: 100%;
+	text-align: center;
+	font-size: 0.26rem;
+	color: #333;
+	margin-top: 0.5rem;
+}
+.jhmBegin>input{
+	display: block;
+	width: 4.7rem !important;
+	height: 0.74rem !important;
+	line-height: 0.74rem !important;
+	font-size: 0.26rem;
+	color: #333;
+	margin: 0 auto;
+	margin-top: 0.5rem;
+	background: #f5f5f5;
+	border-radius: 0.5rem;
+	outline: none;
+	border: none;
+}
+.load_btn{
+	width: 6.57rem;
+	height: 0.92rem;
+	background: #02da78;
+	margin: 0 auto;
+	line-height: 0.92rem;
+	text-align: center;
+	font-size: 0.3rem;
+	color: #fff;
+	margin-top: 0.4rem;
+	border-radius: 0.5rem;
+}
+.setList{
+	width: 7.09rem;
+	height: auto;
+	overflow: hidden;
+	padding-bottom: 0.8rem;
+	margin: 0 auto;
+}
+.setList li{
+	width: 100%;
+	height: 0.99rem;
+	border-bottom: 0.01rem solid #d2d2d2;
+}
+.setList li>p{
+	width: 38%;
+	height: 100%;
+	line-height: 0.99rem;
+	font-size: 0.28rem;
+	color: #333333;
+	float: left;
+}
+.setList li>div{
+	width: 31%;
+	height: 100%;
+	float: left;
+}
+.setList li>div>p{
+	float: left;
+	height: 100%;
+	line-height: 0.99rem;
+	font-size: 0.28rem;
+	color: #333333;
+}
+.setList li>div>input{
+	display: block;
+	width: 1rem !important;
+	height: 0.69rem !important;
+	line-height: 0.74rem !important;
+	text-align: center;
+	font-size: 0.26rem;
+	color: #333;
+	margin: 0 auto;
+	padding: 0;
+	background: #f5f5f5;
+	border-radius: 0.2rem;
+	outline: none;
+	border: none;
+	float: left;
+	margin-top: 0.15rem;
+	margin-left: 0.1rem;
+	margin-right: 0.1rem;
+}
+.myTeam{
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5
+}
+.top_num{
+    width: 95%;
+    height:0.54rem ;
+    margin: 0 auto;
+    line-height: 0.54rem;
+    font-size: 0.22rem;
+    
+}
+.myTeam_dai{
+    width: 95%;
+    height: auto;
+    background-color: #fff;
+    margin: 0 auto;
+}
+.myTeam_dai_top{
+    width:100% ;
+    height:0.64rem ;
+    border-bottom: 1px solid #f5f5f5;
+}
+.myTeam_dai_top span{
+    line-height: 0.64rem;
+    font-size: 0.22rem;
+    display: inline-block;
+    padding-left: 1rem;
+    padding-right: 0.6rem;
+}
+.myTeam_dai_top img{
+    width: 0.32rem;
+    height: 0.2rem;
+    display: inline-block;
+}
+.myTeam_dai_bottom{
+    width: 100%;
+    height: auto;
+    display: none;
+}
+.myTeam_dai_bottom span{
+    width: 100%;
+    height: 0.47rem;
+    line-height: 0.47rem;
+    display: block;
+    padding-left: 3rem;
+}
+.myTeam_dai_bottom span:last-child{
+    border-bottom: 1px solid #f5f5f5;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>运营中心列表</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/animate.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/mui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/public.css"/>
+    <script src="/static/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/js/index.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/layer/mobile/layer.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body style="background: #f5f5f5;">
+	<div class="header">
+		<a href="/index/" class="backPage"></a>
+		<p class="page_title">运营中心列表</p>
+	</div>
+	<div style="width: 100%; height: 0.88rem; background: none;"></div>
+	<div class="newMemberList">
+		<ul class="listUl">
+			<li style="width: 16%;">会员姓名</li>
+            <li style="width: 18%;">会员手机</li>
+			<li>下级人数</li>
+			<li>团队人数</li>
+			<li style="width: 16%;"></li>
+			<li style="width: 16%;"></li>
+		</ul>
+        {% for v in list %}
+		<ul class="listInfoUl">
+			<li style="width: 16%;">{{ v.realname }}</li>
+            <li style="width: 18%;">{{ v.phone }}</li>
+			<li>{{ v.tj_num }}人</li>
+			<li>{{ v.td_num }}人</li>
+			<li style="width: 16%;">
+				{% if  v.status == 1 %}
+                <div onclick="stateyes({{ v.keyid }})" id="zt{{ v.keyid }}">封号</div>
+                {% else %}
+                <div style="background: #fc7978;" onclick="stateyes({{ v.keyid }})" id="zt{{ v.keyid }}">解封</div>
+                {% endif %}
+			</li>
+			<li style="width: 16%;">
+				<a class="look_info" href={% url 'view_user_info' v.keyid %}>查看信息</a>
+			</li>
+		</ul>
+        {% endfor %}
+	</div>
+</body>
+<script>
+    function stateyes(mid){
+        $.ajax({
+            type : "POST",
+            url:"/member_state/",
+            headers:{"X-CSRFToken":$.cookie('csrftoken')},
+            data:{'mid':mid}, 
+            dataType:'json',		
+            success: function(data){
+               if(data.code == 1){
+                    if(data.data == 1){
+                        $('#zt' + mid).css('background','#4385ff').html('封号');
+                    }else{
+                        $('#zt' + mid).css('background','#fc7978').html('解封');
+                    }
+                    layer.open({
+                        content: data.msg
+                        ,skin: 'msg'
+                        ,time: 3 //2秒后自动关闭
+                    });
+                }else{
+                    layer.open({
+                        content: data.msg
+                        ,skin: 'msg'
+                        ,time: 2 //2秒后自动关闭
+                    });
+                }	
+            }
+        });
+    }
+</script>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>忘记密码</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/animate.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/mui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/public.css"/>
+    <script src="/static/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/js/index.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/layer/mobile/layer.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body style="background: url(/static/img/loginBackground.jpg) no-repeat; background-size: cover;">
+	<div class="logoBox"></div>
+	<div class="pwdBox">
+		<div class="pwdInput">
+			<img src="/static/img/userId.png" class="boxIcon"/>
+			<p class="boxTitle">手机号:</p>
+			<input type="text" name="phone" class="boxInput"/>
+		</div>
+		<div class="pwdInput">
+			<img src="/static/img/userId.png" class="boxIcon"/>
+			<p class="boxTitle">验证码:</p>
+			<input type="text" name="yzm" class="boxInput" style="width: 1.5rem !important;"/>
+			<!-- <button class="yamBtn" type="button">发送验证码</button> -->
+			<button class="yamBtn" type="button">1234</button>
+		</div>
+		<div class="pwdInput" style="margin-top: 0.1rem;">
+			<img src="/static/img/pwd.png" class="boxIcon"/>
+			<p class="boxTitle">密码:</p>
+			<input type="password" name="password" class="boxInput"/>
+		</div>
+		<div class="pwdInput" style="margin-top: 0.1rem;">
+			<img src="/static/img/pwd.png" class="boxIcon"/>
+			<p class="boxTitle">确认密码:</p>
+			<input type="password" name="repassword" class="boxInput"/>
+		</div>
+		<div class="loginBtn">确认</div>
+		<p class="tips">返回登录</p>
+	</div>
+</body>
+<script type="text/javascript">
+	$(function() {
+		$('.tips').click(function () {
+			window.location.href = "/login/"
+		})
+	})
+</script>
+<script>
+	/*$(".yamBtn").click(function(){
+		
+		var mobile=$("input[name='phone']").val();
+		var jindu=0;
+		var countDown=120;
+		if($(".yamBtn").attr('disabled')){
+			return false;
+		}
+		
+		if(mobile == ''){
+			layer.open({
+				content: '手机号不能为空！'
+				,skin: 'msg'
+				,time: 2 //2秒后自动关闭
+			});
+			return false;
+		}
+		if(!checkMobile(mobile)){
+			layer.open({
+				content: '手机号码格式不正确！'
+				,skin: 'msg'
+				,time: 2 //2秒后自动关闭
+			});
+			return false;
+		}
+		
+		$.ajax({
+			type: "POST",
+			url: "{:url('login/send_sms')}",
+			data:{phone:mobile},
+			dataType:'json',
+			success: function(data){
+				if(data.code == 1){
+					layer.open({
+						content: '发送成功'
+						,skin: 'msg'
+						,time: 2 //2秒后自动关闭
+					});
+					xin=setInterval(function () {
+						jindu +=1;
+						var a=countDown-jindu;
+					   
+						if(a == 0){
+							 clearInterval(xin);
+							 $(".yamBtn").text('重新获取');
+							 $(".yamBtn").removeAttr("disabled"); 
+						}else{
+							$(".yamBtn").attr("disabled",true);
+							$(".yamBtn").text(a+'(秒)');
+
+						}                 
+					}, 1000);
+				}else{
+					layer.open({
+						content: '填写手机号不存在或格式错误！'
+						,skin: 'msg'
+						,time: 2 //2秒后自动关闭
+					});
+				}
+			}
+		});  
+	});*/
+	function checkMobile(tel) {
+		var reg = /(^1[3|4|5|6|7|8|9][0-9]{9}$)/;
+		if (reg.test(tel)) {
+			return true;
+		}else{
+			return false;
+		};
+	}
+	$(".loginBtn").click(function(){
+		var phone=$("input[name='phone']").val();
+		var password = $('input[name=password]').val();
+		var repassword = $('input[name=repassword]').val();
+		var yzm = $('input[name=yzm]').val();
+		if(phone == ''){
+			layer.open({
+				content: '请输入手机号'
+				,skin: 'msg'
+				,time: 2 //2秒后自动关闭
+			});
+			return false;
+		}
+		if (!checkMobile(phone)) {
+			layer.open({
+				content: '手机号格式不正确'
+				,skin: 'msg'
+				,time: 2 //2秒后自动关闭
+			});
+			return false;
+		}
+		if(yzm == ''){
+			layer.open({
+				content: '请输入验证码'
+				,skin: 'msg'
+				,time: 2 //2秒后自动关闭
+			});
+			return false;
+		}
+		if(password == ''){
+			layer.open({
+				content: '请输入密码'
+				,skin: 'msg'
+				,time: 2 //2秒后自动关闭
+			});
+			return false;
+		}
+		if(repassword == ''){
+			layer.open({
+				content: '确认密码不能为空'
+				,skin: 'msg'
+				,time: 2 //2秒后自动关闭
+			});
+			return false;
+		}
+		if(repassword != password){
+			layer.open({
+				content: '两次输入密码不一致'
+				,skin: 'msg'
+				,time: 2 //2秒后自动关闭
+			});
+			return false;
+		}
+		
+		$.ajax({
+			type : "POST",
+			url:"/forgetPwd/",//+tab,
+			data:{'phone':phone,'password':password,'yzm':yzm}, //
+            headers:{"X-CSRFToken":$.cookie('csrftoken')},            
+			dataType:'json',		
+			success: function(data){
+			   if(data.code == 1){
+					layer.open({
+						content: data.msg
+						,skin: 'msg'
+						,time: 2 //2秒后自动关闭
+					});
+                    setTimeout(function(){
+                        window.location.href="/login/"
+                    },700);
+				}else{
+					layer.open({
+						content: data.msg
+						,skin: 'msg'
+						,time: 2 //2秒后自动关闭
+					});
+				}	
+			}
+		});
+	});
+</script>
+</html>

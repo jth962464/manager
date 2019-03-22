@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>设置会员等级</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/animate.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/mui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/public.css"/>
+    <script src="/static/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/js/index.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/layer/mobile/layer.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body style="background: #fff;">
+	<div class="header">
+		<a href="/index/" class="backPage"></a>
+		<p class="page_title">设置会员等级</p>
+	</div>
+	<div style="width: 100%; height: 0.88rem; background: none;"></div>
+	<div style="width:100%;height:11rem;overflow-y: scroll;">
+	<ul class="setList">
+		<li>
+			<p>一级会员升级要求</p>
+			<div>
+				<p>直推</p>
+				<input type="number" name="zt1" value="{{ config.zt1 }}" />
+				<p>人</p>
+			</div>
+			<div>
+				<p>团队</p>
+				<input type="number" name="td1" value="{{ config.td1 }}" />
+				<p>人</p>
+			</div>
+		</li>
+		<li>
+			<p>二级会员升级要求</p>
+			<div>
+				<p>直推</p>
+				<input type="number" name="zt2" value="{{ config.zt2 }}" />
+				<p>人</p>
+			</div>
+			<div>
+				<p>团队</p>
+				<input type="number" name="td2" value="{{ config.td2 }}" />
+				<p>人</p>
+			</div>
+		</li>
+		<li>
+			<p>三级会员升级要求</p>
+			<div>
+				<p>直推</p>
+				<input type="number" name="zt3" value="{{ config.zt3 }}" />
+				<p>人</p>
+			</div>
+			<div>
+				<p>团队</p>
+				<input type="number" name="td3" value="{{ config.td3 }}" />
+				<p>人</p>
+			</div>
+		</li>
+		<li>
+			<p>四级会员升级要求</p>
+			<div>
+				<p>直推</p>
+				<input type="number" name="zt4" value="{{ config.zt4 }}" />
+				<p>人</p>
+			</div>
+			<div>
+				<p>团队</p>
+				<input type="number" name="td4" value="{{ config.td4 }}" />
+				<p>人</p>
+			</div>
+		</li>
+		<li>
+			<p>五级会员升级要求</p>
+			<div>
+				<p>直推</p>
+				<input type="number" name="zt5" value="{{ config.zt5 }}" />
+				<p>人</p>
+			</div>
+			<div>
+				<p>团队</p>
+				<input type="number" name="td5" value="{{ config.td5 }}" />
+				<p>人</p>
+			</div>
+		</li>
+		<li>
+			<p>六级会员升级要求</p>
+			<div>
+				<p>直推</p>
+				<input type="number" name="zt6" value="{{ config.zt6 }}" />
+				<p>人</p>
+			</div>
+			<div>
+				<p>团队</p>
+				<input type="number" name="td6" value="{{ config.td6 }}" />
+				<p>人</p>
+			</div>
+		</li>
+		<li>
+			<p>七级会员升级要求</p>
+			<div>
+				<p>直推</p>
+				<input type="number" name="zt7" value="{{ config.zt7 }}" />
+				<p>人</p>
+			</div>
+			<div>
+				<p>团队</p>
+				<input type="number" name="td7" value="{{ config.td7 }}" />
+				<p>人</p>
+			</div>
+		</li>
+		<li>
+			<p>八级会员升级要求</p>
+			<div>
+				<p>直推</p>
+				<input type="number" name="zt8" value="{{ config.zt8 }}" />
+				<p>人</p>
+			</div>
+			<div>
+				<p>团队</p>
+				<input type="number" name="td8" value="{{ config.td8 }}" />
+				<p>人</p>
+			</div>
+		</li>
+		<li>
+			<p>九级会员升级要求</p>
+			<div>
+				<p>直推</p>
+				<input type="number" name="zt9" value="{{ config.zt9 }}" />
+				<p>人</p>
+			</div>
+			<div>
+				<p>团队</p>
+				<input type="number" name="td9" value="{{ config.td9 }}" />
+				<p>人</p>
+			</div>
+		</li>
+	</ul>
+    <div class="login_btn" style="margin-top:0">确认</div>
+    </div>
+</body>
+<script type="text/javascript">
+	$('.login_btn').click(function() {
+        var zt1=$("input[name='zt1']").val();
+        var td1=$("input[name='td1']").val();
+        var zt2=$("input[name='zt2']").val();
+        var td2=$("input[name='td2']").val();
+        var zt3=$("input[name='zt3']").val();
+        var td3=$("input[name='td3']").val();
+        var zt4=$("input[name='zt4']").val();
+        var td4=$("input[name='td4']").val();
+        var zt5=$("input[name='zt5']").val();
+        var td5=$("input[name='td5']").val();
+        var zt6=$("input[name='zt6']").val();
+        var td6=$("input[name='td6']").val();
+        var zt7=$("input[name='zt7']").val();
+        var td7=$("input[name='td7']").val();
+        var zt8=$("input[name='zt8']").val();
+        var td8=$("input[name='td8']").val();
+        var zt9=$("input[name='zt9']").val();
+        var td9=$("input[name='td9']").val();
+        $.ajax({
+            type : "POST",
+            url:"/level_config/",//+tab,
+            headers:{"X-CSRFToken":$.cookie('csrftoken')},
+            data:{'zt1':zt1,'td1':td1,'zt2':zt2,'td2':td2,'zt3':zt3,'td3':td3,'zt4':zt4,'td4':td4,'zt5':zt5,'td5':td5,'zt6':zt6,'td6':td6,'zt7':zt7,'td7':td7,'zt8':zt8,'td8':td8,'zt9':zt9,'td9':td9}, 
+            dataType:'json',		
+            success: function(data){
+               if(data.code == 1){
+                    layer.open({
+                        content: data.msg
+                        ,skin: 'msg'
+                        ,time: 3 //2秒后自动关闭
+                    });
+                    setTimeout(function(){
+                        window.location.reload()
+                    },700);
+                 }else{
+                    layer.open({
+                        content: data.msg
+                        ,skin: 'msg'
+                        ,time: 2 //2秒后自动关闭
+                    });
+                }	
+            }
+        });
+    });
+</script>
+</html>

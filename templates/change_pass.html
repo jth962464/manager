@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>修改密码</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/animate.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/mui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/public.css"/>
+    <script src="/static/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/js/index.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/layer/mobile/layer.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body style="background: #fff;">
+	<div class="header">
+		<a href="/index/" class="backPage"></a>
+		<p class="page_title">修改密码</p>
+	</div>
+	<div style="width: 100%; height: 0.88rem; background: none;"></div>
+	<div class="inputBox">
+		<div class="inputBox_form">
+			<p>旧密码</p>
+			<input type="password" name="pwd" placeholder="请输入原密码"/>
+		</div>
+		<div class="inputBox_form">
+			<p>新密码</p>
+			<input type="password" name="newpwd" placeholder="请输入新密码"/>
+		</div>
+		<div class="inputBox_form">
+			<p>确认新密码</p>
+			<input type="password" name="renewpwd" placeholder="请确认密码"/>
+		</div>
+	</div>
+	<div class="login_btn">确认</div>
+</body>
+<script type="text/javascript">
+	$(function() {
+		$('.login_btn').click(function() {
+            var pwd=$("input[name='pwd']").val();
+            var newpwd=$("input[name='newpwd']").val();
+            var renewpwd=$("input[name='renewpwd']").val();
+            if(pwd == ''){
+                layer.open({
+                    content: '请输入原密码'
+                    ,skin: 'msg'
+                    ,time: 2 //2秒后自动关闭
+                });
+                return false;
+            }
+            if(newpwd == ''){
+                layer.open({
+                    content: '请输入新密码'
+                    ,skin: 'msg'
+                    ,time: 2 //2秒后自动关闭
+                });
+                return false;
+            }
+            if(renewpwd == ''){
+                layer.open({
+                    content: '请确认新密码'
+                    ,skin: 'msg'
+                    ,time: 2 //2秒后自动关闭
+                });
+                return false;
+            }
+            if(renewpwd != newpwd){
+                layer.open({
+                    content: '两次输入的密码不一致'
+                    ,skin: 'msg'
+                    ,time: 2 //2秒后自动关闭
+                });
+                return false;
+            }
+            $.ajax({
+                type : "POST",
+                url:"/change_pass/",//+tab,
+                headers:{"X-CSRFToken":$.cookie('csrftoken')},
+                data:{'pwd':pwd,'newpwd':newpwd}, 
+                dataType:'json',		
+                success: function(data){
+                   if(data.code == 1){
+                        layer.open({
+                            content: data.msg
+                            ,skin: 'msg'
+                            ,time: 3 //2秒后自动关闭
+                        });
+                        setTimeout(function(){
+                            window.location.href="/login/"
+                        },700);
+                    }else{
+                        layer.open({
+                            content: data.msg
+                            ,skin: 'msg'
+                            ,time: 2 //2秒后自动关闭
+                        });
+                    }	
+                }
+            });
+        });
+	})
+</script>
+</html>

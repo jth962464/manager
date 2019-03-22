@@ -1,0 +1,50 @@
+html,body,div,h1,h2,h3,h4,h5,h6,img,ul,li,p,dl,dd,dt,select,option,input,table,th,td,a,textarea,button{
+	margin: 0;
+	padding: 0;
+	font-size: 0.3rem;
+	font-family: "微软雅黑";
+}
+ul,li{
+	list-style: none;
+}
+select,option{
+	list-style: none;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+select,input{
+	border:none;
+    outline:none;
+    background: none;
+}
+a{
+	text-decoration: none;
+	color: #3e3e3e;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+}
+button{
+	border: none;
+	outline:none;
+	background: none;
+}
+img{
+	width: 100%;
+	height: 100%;
+	display: block;
+	border: none;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+	color:#999;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color:#999;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+　　color:#999;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+　　color:#999;
+}

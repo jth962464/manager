@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>我的团队</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/animate.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/mui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/public.css"/>
+    <script src="/static/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/js/index.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/layer/mobile/layer.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body style="background: #fff;">
+	<div class="header">
+		<a href="/index/" class="backPage"></a>
+		<p class="page_title">我的团队</p>
+	</div>
+	<div style="width: 100%; height: 0.88rem; background: none;"></div>
+	<div class="myTeam">
+		<div class="top_num">团队总用户{{ info.td_num }}人</div>
+		<div class="myTeam_dai">
+			<div class="myTeam_dai_top">
+				<span>一代用户{{ info.tj_num }}人</span>
+				<img src="/static/img/myTeam_jian.png" alt=""  onclick="kai(this)"/>
+			</div>
+			<div class="myTeam_dai_bottom">
+                {% for v in list %}
+                <span>{{ v.phone }}&nbsp;&nbsp;{{ v.level }}级</span>
+                {% endfor %}
+            </div>	
+		</div>
+		<div class="myTeam_dai">
+			<div class="myTeam_dai_top">
+				<span>二代用户{{ info.tj_num2 }}人</span>
+				<img src="/static/img/myTeam_jian.png" alt=""  onclick="kai(this)"/>
+			</div>
+			<div class="myTeam_dai_bottom">
+                {% for v2 in list2 %}
+                <span>{{ v2.phone }}&nbsp;&nbsp;{{ v2.level }}级</span>
+                {% endfor %}
+            </div>	
+		</div>
+		<div class="myTeam_dai">
+			<div class="myTeam_dai_top">
+                <span>三代用户{{ info.tj_num3 }}人</span>
+				<img src="/static/img/myTeam_jian.png" alt=""  onclick="kai(this)"/>
+			</div>
+			<div class="myTeam_dai_bottom">
+                {% for v3 in list3 %}
+                <span>{{ v3.phone }}&nbsp;&nbsp;{{ v3.level }}级</span>
+                {% endfor %}
+            </div>	
+		</div>
+	</div>
+</body>
+</html>
+<script>
+    function kai(obj){
+        $(obj).parent().parent().siblings().find('.myTeam_dai_bottom').hide()
+        $(obj).parent().next().show()
+    }
+</script>

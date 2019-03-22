@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>上级推荐人</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/animate.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/mui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/public.css"/>
+    <script src="/static/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/js/index.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/layer/mobile/layer.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body style="background: #f5f5f5;">
+	<div class="header">
+		<a href="/index/" class="backPage"></a>
+		<p class="page_title">上级推荐人</p>
+	</div>
+	<div style="width: 100%; height: 0.88rem; background: none;"></div>
+	<div class="myInfoBox" style="height: 4.62rem;">
+		<p>姓名：{{ info.realname }}</p>
+		<p>手机号：{{ info.phone }}</p>
+		<p>微信名：{{ info.wx_name }}</p>
+		<p>支付宝：{{ info.zfb }}</p>
+		<p>QQ：{{ info.qq }}</p>
+		<p>等级：{{ info.level }}级</p>
+	</div>
+</body>
+</html>

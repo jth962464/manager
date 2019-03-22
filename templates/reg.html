@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/animate.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/mui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/public.css"/>
+    <script src="/static/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/js/index.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/layer/mobile/layer.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body style="background: url(/static/img/loginBackground.jpg) no-repeat; background-size: cover;">
+	<div class="logoBox"></div>
+	<div class="pwdBox" style="height:6.6rem;">
+		<div class="pwdInput">
+			<img src="/static/img/userId.png" class="boxIcon"/>
+			<p class="boxTitle">手机号:</p>
+			<input type="text" name="phone" class="boxInput"/>
+		</div>
+		<div class="pwdInput">
+			<img src="/static/img/userId.png" class="boxIcon"/>
+			<p class="boxTitle">验证码:</p>
+			<input type="text" name="yzm" class="boxInput" style="width: 1.5rem !important;"/>
+			<!-- <button class="yamBtn" type="button">发送验证码</button> -->
+			<button class="yamBtn" type="button">1234</button>
+		</div>
+		<div class="pwdInput" style="margin-top: 0.1rem;">
+			<img src="/static/img/pwd.png" class="boxIcon"/>
+			<p class="boxTitle">密码:</p>
+			<input type="password" name="password" class="boxInput"/>
+		</div>
+		<div class="pwdInput" style="margin-top: 0.1rem;">
+			<img src="/static/img/pwd.png" class="boxIcon"/>
+			<p class="boxTitle">确认密码:</p>
+			<input type="password" name="repassword" class="boxInput"/>
+		</div>
+		<div class="pwdInput" style="margin-top: 0.1rem;">
+			<img src="/static/img/pwd.png" class="boxIcon"/>
+			<p class="boxTitle">真实姓名:</p>
+			<input type="text" name="realname" class="boxInput"/>
+		</div>
+		<div class="pwdInput">
+			<img src="/static/img/userId.png" class="boxIcon"/>
+			<p class="boxTitle">推荐码:</p>
+			<input type="text" name="recommend" class="boxInput"/>
+		</div>
+		<div class="loginBtn" style="margin-top: 0.6rem;">确认</div>
+		<div class="xieyi">
+			<img src="/static/img/chooseOff.png"/>
+			<input type="checkbox" id="check" value="0"/>
+			<p>注册协议</p>
+		</div>
+	</div>
+	<div class="mask"></div>
+	<div class="xieyiBox">
+		<a href="javascript:void(0);" class="close"></a>
+		<p class="maskTitle">注册协议</p>
+		<div class="maskInfo">
+            <p>本公约是万娱超级会员管理平台和会员（以下或简称“您”）共同遵守的约定。您要加入万娱超级会员管理系统请务必认真阅读本公约的全部内容。本公约一经您点击确认并同意接受，即对您产生法律效力。
+            </p>
+            <p style="text-indent: 0em;">一、 定义</p>
+            <p>1、 会员：是注册会员的统称。</p>
+            <p>2、 地方运营商：是指具有完全民事权利能力和民事行为能力，在万娱超级会员管理系统填写真实身份信息并完成注册流程、授权的自然人和法人，全权管理其团队会员。</p>
+            <p>3、 会员等级：根据会员业绩参照，设定的等级。</p>
+            <p style="text-indent: 0em;">二、 本公约的构成及效力</p>
+            <p>1、万娱超级会员管理系统有权根据实际情况适时修订本公约规则，一经修订，将会用修订后的条款版本完全替代修订前的条款版本，并通过原有方式向所有会员公布。变更后的条款一经在万娱超级会员管理系统上公示，即发生法律效力，条款修订后的相关一切服务都将按照新条款执行。</p>
+            <p>2、 如您对本公约有任何疑问，应向万娱超级会员管理系统客服咨询。您不应以未阅读或不接受本公约的内容为由，主张本公约无效或要求撤销本公约。</p>
+            <p>3、 您应该按照本公约约定行使权利并履行义务。如您不能接受本公约的约定，包括但不限于不能接受修订后的公约，则您应立即停止使用万娱超级会员管理系统针对会员提供的服务。如您继续使用万娱超级会员管理系统针对会员提供的服务，则表示您同意并接受本公约的约束。</p>
+            <p style="text-indent: 0em;">三、 权利义务</p>
+            <p style="text-indent: 1em;">（一）作为注册会员，您享有如下权利，也承担如下义务：</p>
+            <p>1、 您有权浏览万娱超级会员管理系统平台活动信息；</p>
+            <p>2、 您有权参与万娱超级会员管理系统平台活动；</p>
+            <p>3、 您有义务向万娱超级会员管理系统提供真实实名的身份信息；</p>
+            <p>4、 您有义务维护万娱超级会员管理系统的声誉；</p>
+            <p>5、 您有义务保证不在万娱超级会员管理系统上发布包含诈骗、非法、色情、淫秽、暴力等违反国家法律法规、政策的内容，不发表含有攻击性、侮辱性的言论。</p>
+            <p style="text-indent: 1em;">（二）作为万娱会员，您在注册会员的权利义务基础上，进一步享有如下权利，也承担如下义务：</p>
+            <p>1、 您可以在万娱超级会员管理系统获取上级推荐人和自己直推人的信息、资料。</p>
+            <p>2、 您对万娱超级会员管理系统有批评权、建议权和监督权；</p>
+            <p>3、 您应确保您在万娱超级会员管理系统的注册身份及联系方式信息是真实有效的；</p>
+            <p>4、 您应妥善保管在万娱超级会员管理系统的用户名和密码，凡使用您的用户名和密码登陆万娱超级会员管理系统进行的一切操作，均视为您本人的行为，一切责任由您本人承担；</p>
+            <p>5、 您在万娱超级会员管理系统的一切权利交由您所属的地方运营商管理，万娱超级会员管理系统不会擅自更改；</p>
+            <p style="text-indent: 1em;">（三）万娱超级会员管理系统享有如下权利及其责任划分：</p>
+            <p>1、 万娱超级会员管理系统有权管理所有会员的信息、资料；</p>
+            <p>2、 万娱超级会员管理系统有权对会员及其地方运营商进行审核，并最终决定会员是否可以获得资格；</p>
+            <p>3、 万娱超级会员管理系统只提供会员管理，无任何资金来往，会员与会员之间的私下交易与万娱超级会员管理系统无任何关系；</p>
+            <p>4、 万娱超级会员管理系统涉及到互联网服务，可能会受到各个环节不稳定因素的影响。因此服务存在不可抗力、计算机病毒或黑客攻击、系统不稳定、会员所在位置、会员关机以及其他任何技术、互联网络、通信线路原因等造成的服务中断或不能满足会员要求的风险，万娱超级会员管理系统不作任何担保。对因此导致会员不能发送和接受阅读消息、或接发错消息，万娱超级会员管理系统不承担任何责任；</p>
+            <p>5、 如万娱超级会员管理系统的系统发生故障影响服务的正常运行，万娱超级会员管理系统承诺在第一时间内与相关单位配合，及时处理进行修复。但会员因此而产生的间接损失，万娱超级会员管理系统不承担责任。此外万娱超级会员管理系统保留不经事先通知为维修保养、升级或其他目的暂停服务任何部分的权利；</p>
+            <p style="text-indent: 1em;">（四）、 公约终止和退出公约</p>
+            <p>1、 以下任一情形出现，本公约即终止:</p>
+            <p>（1）因各种原因而终止万娱超级会员管理系统运作的；</p>
+            <p>（2） 不可抗力、政策因素致本公约终止的。</p>
+            <p>2、 以下任一情形出现，您即退出本公约:</p>
+            <p>（1） 您违反了国家法律法规、政策，万娱超级会员管理系统停止为您提供服务的；</p>
+            <p>（2） 您本人不同意接受本公约约定；</p>
+            <p>（3） 您不符合本公约约定的会员资格的。</p>
+            <p>3、 本公约终止或您退出本公约，不影响您受本公约约束时所做的行为应承担的义务和责任。</p>
+            <p style="text-indent: 0em;">四、 如会员发现任何违反本公约约定的事情，请及时通知万娱超级会员管理系统。</p>
+        </div>
+	</div>
+</body>
+<script type="text/javascript">
+	$(function() {
+		var btn = document.getElementById("check")
+		$('.xieyi>input').click(function() {
+			if(btn.checked) {
+				$('.xieyi>img').attr('src',"/static/img/chooseOn.png")
+                $("#check").val(1);
+			}else{
+				$('.xieyi>img').attr('src',"/static/img/chooseOff.png")
+                $("#check").val(0);
+			}
+		});
+		
+		$('.xieyi>p').click(function() {
+			$('.mask').show();
+			$('.xieyiBox').show();
+		});
+		
+	})
+</script>
+<script>
+	/*$(".yamBtn").click(function(){
+		
+		var mobile=$("input[name='phone']").val();
+		var jindu=0;
+		var countDown=120;
+		if($(".yamBtn").attr('disabled')){
+			return false;
+		}
+		
+		if(mobile == ''){
+			layer.open({
+				content: '手机号不能为空！'
+				,skin: 'msg'
+				,time: 2 //2秒后自动关闭
+			});
+			return false;
+		}
+		if(!checkMobile(mobile)){
+			layer.open({
+				content: '手机号码格式不正确！'
+				,skin: 'msg'
+				,time: 2 //2秒后自动关闭
+			});
+			return false;
+		}
+		
+		$.ajax({
+			type: "POST",
+			url: "{:url('login/send_sms')}",
+			data:{phone:mobile},
+			dataType:'json',
+			success: function(data){
+				if(data.code == 1){
+					layer.open({
+						content: '发送成功'
+						,skin: 'msg'
+						,time: 2 //2秒后自动关闭
+					});
+					xin=setInterval(function () {
+						jindu +=1;
+						var a=countDown-jindu;
+					   
+						if(a == 0){
+							 clearInterval(xin);
+							 $(".yamBtn").text('重新获取');
+							 $(".yamBtn").removeAttr("disabled"); 
+						}else{
+							$(".yamBtn").attr("disabled",true);
+							$(".yamBtn").text(a+'(秒)');
+
+						}                 
+					}, 1000);
+				}else{
+					layer.open({
+						content: '填写手机号不存在或格式错误！'
+						,skin: 'msg'
+						,time: 2 //2秒后自动关闭
+					});
+				}
+			}
+		});  
+	});*/
+	function checkMobile(tel) {
+		var reg = /(^1[3|4|5|6|7|8|9][0-9]{9}$)/;
+		if (reg.test(tel)) {
+			return true;
+		}else{
+			return false;
+		};
+	}
+	$(".loginBtn").click(function(){
+		var phone=$("input[name='phone']").val();
+		var password = $('input[name=password]').val();
+		var repassword = $('input[name=repassword]').val();
+		var yzm = $('input[name=yzm]').val();
+		var realname = $('input[name=realname]').val();
+		var recommend = $('input[name=recommend]').val();
+		var check = $("#check").val();
+		if(phone == ''){
+			layer.open({
+				content: '请输入手机号'
+				,skin: 'msg'
+				,time: 2 //2秒后自动关闭
+			});
+			return false;
+		}
+		if (!checkMobile(phone)) {
+			layer.open({
+				content: '手机号格式不正确'
+				,skin: 'msg'
+				,time: 2 //2秒后自动关闭
+			});
+			return false;
+		}
+		if(yzm == ''){
+			layer.open({
+				content: '请输入验证码'
+				,skin: 'msg'
+				,time: 2 //2秒后自动关闭
+			});
+			return false;
+		}
+		if(password == ''){
+			layer.open({
+				content: '请输入密码'
+				,skin: 'msg'
+				,time: 2 //2秒后自动关闭
+			});
+			return false;
+		}
+		if(password.length < 3){
+			layer.open({
+				content: '密码至少三位'
+				,skin: 'msg'
+				,time: 2 //2秒后自动关闭
+			});
+			return false;
+		}
+		if(repassword == ''){
+			layer.open({
+				content: '确认密码不能为空'
+				,skin: 'msg'
+				,time: 2 //2秒后自动关闭
+			});
+			return false;
+		}
+		if(repassword != password){
+			layer.open({
+				content: '两次输入密码不一致'
+				,skin: 'msg'
+				,time: 2 //2秒后自动关闭
+			});
+			return false;
+		}
+        if(realname == ''){
+			layer.open({
+				content: '真实姓名不能为空'
+				,skin: 'msg'
+				,time: 2 //2秒后自动关闭
+			});
+			return false;
+		}
+        if(check != 1){
+			layer.open({
+				content: '请同意注册协议'
+				,skin: 'msg'
+				,time: 2 //2秒后自动关闭
+			});
+			return false;
+		}
+		
+		$.ajax({
+			type : "POST",
+			url:"/reg/",//+tab,
+			data:{'phone':phone,'password':password,'recommend':recommend,'yzm':yzm,'realname':realname}, // 
+            headers:{"X-CSRFToken":$.cookie('csrftoken')},
+			dataType:'json',		
+			success: function(data){
+			   if(data.code == 1){
+					layer.open({
+						content: data.msg
+						,skin: 'msg'
+						,time: 2 //2秒后自动关闭
+					});
+					setTimeout(function(){
+						window.location.href="/login/"
+					},700);
+				}else{
+					layer.open({
+						content: data.msg
+						,skin: 'msg'
+						,time: 2 //2秒后自动关闭
+					});
+				}	
+			}
+		});
+	});
+</script>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>首页</title>
+		<link rel="stylesheet" type="text/css" href="/static/css/animate.min.css"/>
+        <link rel="stylesheet" type="text/css" href="/static/css/index.css"/>
+        <link rel="stylesheet" type="text/css" href="/static/css/mui.min.css"/>
+        <link rel="stylesheet" type="text/css" href="/static/css/public.css"/>
+        <script src="/static/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/static/js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/static/js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/static/js/index.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/static/layer/mobile/layer.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body style="background: url(/static/img/bj.png) no-repeat; background-size: cover;">
+		<!--首页-->
+		<div class="indexBox">
+			<div class="indexLogo"></div>
+			<div class="infoBox">
+				<p class="name">{{ info.realname }}</p>
+				{% if request.session.user_type == 0 %}
+                <p class="level">等级:{{ info.level }}级</p>
+                <div class="upBtn"></div>
+                {% endif %}
+			</div>
+            <input type="hidden" name="user_type" value="{{ request.session.user_type }}">
+            <input type="hidden" name="session_active_code" value="{{ request.session.active_code }}">
+            {% if request.session.user_type == 2 %}
+            <!--总部管理-->
+            <p class="divTitle">总部管理</p>
+            <div class="allUl">
+				<ul>
+					<li>
+						<a href="/member_info/">
+							<img src="/static/img/wdxx1.png" alt="" />
+						</a>
+					</li>
+					<li>
+						<a href="/change_pass/">
+							<img src="/static/img/xgmm.png" alt="" />
+						</a>
+					</li>
+					<li>
+						<a href="/level_config/">
+							<img src="/static/img/szhydj.png" alt="" />
+						</a>
+					</li>
+					<li>
+						<a href="/yy_list/">
+							<img src="/static/img/yyzxlb.png" alt="" />
+						</a>
+					</li>
+					<li>
+						<a href="/user_list/">
+							<img src="/static/img/hylb1.png" alt="" />
+						</a>
+					</li>
+					<li>
+						<a href="/active/">
+							<img src="/static/img/jhmsc.png" alt="" />
+						</a>
+					</li>
+					<li>
+						<a href="/active_list/">
+							<img src="/static/img/jhmgl.png" alt="" />
+						</a>
+					</li>
+					<li>
+						<a href="/yy_add/">
+							<img src="/static/img/tjyyzx.png" alt="" />
+						</a>
+					</li>
+				</ul>
+			</div>
+			
+            {% elif  request.session.user_type == 1 %}
+            <!--运营中心-->
+            <p class="divTitle">运营中心</p>
+            <div class="indexUl">
+				<ul>
+					<li>
+						<a href="/member_info/">
+							<img src="/static/img/wdxx.png" alt="" />
+						</a>
+					</li>
+					<li>
+						<a href="/change_pass/">
+							<img src="/static/img/zgmm.png" alt="" />
+						</a>
+					</li>
+					<li>
+						<a href="/yy_user_list/">
+							<img src="/static/img/hylb.png" alt="" />
+						</a>
+					</li>
+					<li>
+						<a href="/apply_list/">
+							<img src="/static/img/hysh.png" alt="" />
+						</a>
+					</li>
+				</ul>
+			</div>
+            {% else %}
+            <p class="divTitle">首页</p>
+            <div class="indexUl">
+				<ul>
+					<li>
+						<a href="/member_info/">
+							<img src="/static/img/wdxx.png" alt="" />
+						</a>
+					</li>
+					<li>
+						<a href="/change_pass/">
+							<img src="/static/img/zgmm.png" alt="" />
+						</a>
+					</li>
+					<li>
+						<a href="/fmember_info/">
+							<img src="/static/img/sjtjr.png" alt="" />
+						</a>
+					</li>
+					<li>
+						<a href="/team_info/">
+							<img src="/static/img/wdtd.png" alt="" />
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;" id="wdrw">
+							<img src="/static/img/wdrw.png" alt="" />
+						</a>
+					</li>
+				</ul>
+			</div>
+            {% endif %}
+			<div class="tcBtn">退出登录</div>
+		</div>
+		
+		<div class="mask"></div>
+		<div class="jhmBox">
+			<p class="maskTitle" style="margin-top: 0.9rem;">申请成功，等待审核</p>
+			<div class="sureBtn" style="margin-top: 0.8rem;">确认</div>
+		</div>
+
+        <div class="jhmBox1">
+            <p class="maskTitle" style="margin-top: 0.3rem;">请填写激活码</p>
+            <input type="text" name="active_code" placeholder="请输入激活码" class="jhmInput" />
+            <div class="sureBtn" id="tjjhm">确认</div>
+        </div>
+	</body>
+	<script type="text/javascript">
+        $(function() {
+            var user_type = $("input[name='user_type']").val();
+            var session_active_code = $("input[name='session_active_code']").val();
+            if(session_active_code == '0'){
+                if(user_type == 0){
+                    $('.mask').show();
+                    $('.jhmBox1').show();
+                }
+            }
+        })
+    </script>
+	<script type="text/javascript">
+		$(function() {
+			<!-- 申请升级 -->
+            $('.upBtn').click(function() {
+				$.ajax({
+                    type : "POST",
+                    url:"/user_level/",
+                    headers:{"X-CSRFToken":$.cookie('csrftoken')},                    
+                    dataType:'json',		
+                    success: function(data){
+                        if(data.code == 1){
+                            $('.mask').show();
+                            $('.jhmBox p').html(data.msg);
+                            $('.jhmBox').show();
+                        }else if(data.code == 3){
+                            layer.open({
+                                content: data.msg
+                                ,skin: 'msg'
+                                ,time: 3 //2秒后自动关闭
+                            });
+                            setTimeout(function(){
+                                window.location.href="/login/"
+                            },700);
+                        }else{
+                            $('.mask').show();
+                            $('.jhmBox p').html(data.msg);
+                            $('.jhmBox').show();
+                        }
+                    }
+                });
+			});
+			
+			$('.sureBtn').click(function() {
+				$('.mask').hide();
+				$('.jhmBox').hide();
+			});
+			
+			$('.tcBtn').click(function() {
+				layer.open({
+                    content: '确认退出？'
+                    ,btn: ['确认', '取消']
+                    ,yes: function(index){
+                        $.ajax({
+                            type: "POST",
+                            url: "/logout/",
+                            headers:{"X-CSRFToken":$.cookie('csrftoken')},
+                            dataType:'json',
+                            success: function(data){
+                                if(data.code == 1){
+                                    layer.open({
+                                        content: '退出成功'
+                                        ,skin: 'msg'
+                                        ,time: 3 //2秒后自动关闭
+                                    });
+                                    setTimeout(function(){
+                                        window.location.href="/login/"
+                                    },700);
+                                }
+                            }
+                        });
+                    }
+                  });
+			});
+            $('#wdrw').click(function() {
+				layer.open({
+                    content: '敬请期待'
+                    ,btn: '好的'
+                });
+			});
+			<!-- 使用激活码激活 -->
+            $('#tjjhm').click(function() {
+                $('.mask').show();
+                $('.jhmBox1').show();
+                
+                var active_code=$("input[name='active_code']").val();
+                if(active_code == ''){
+                    layer.open({
+                        content: '请输入激活码'
+                        ,skin: 'msg'
+                        ,time: 2 //2秒后自动关闭
+                    });
+                    
+                    return false;
+                }
+                $.ajax({
+                    type : "POST",
+                    url:"/use_active/",//+tab,
+                    headers:{"X-CSRFToken":$.cookie('csrftoken')},
+                    data:{'active_code':active_code}, 
+                    dataType:'json',		
+                    success: function(data){
+                       if(data.code == 1){
+                            $('.mask').hide();
+                            $('.jhmBox1').hide();
+                            layer.open({
+                                content: data.msg
+                                ,skin: 'msg'
+                                ,time: 3 //2秒后自动关闭
+                            });
+                            setTimeout(function(){
+                                window.location.reload()
+                            },700);
+                        }else{
+                            layer.open({
+                                content: data.msg
+                                ,skin: 'msg'
+                                ,time: 2 //2秒后自动关闭
+                            });
+                        }	
+                    }
+                });
+            });
+		})
+	</script>
+</html>
